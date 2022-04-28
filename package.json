@@ -1,0 +1,25 @@
+{
+  "name": "wedding_website",
+  "version": "1.0.0",
+  "description": "Website for Wedding Company",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhruv-gautam16/Wedding_Website.git"
+  },
+  "author": "Dhruv Gautam, Gulafsha Ahmed, Ayush Yadavm, Akash Ramesh, Kisan Gupta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhruv-gautam16/Wedding_Website/issues"
+  },
+  "homepage": "https://github.com/dhruv-gautam16/Wedding_Website#readme",
+  "dependencies": {
+    "ejs": "^3.1.7",
+    "express": "^4.17.3",
+    "mongoose": "^6.3.1",
+    "nodemon": "^2.0.15"
+  }
+}
