@@ -1,3 +1,9 @@
+
+body
+{
+    background-color: rgb(235, 161, 237);
+}
+
 .page-footer {
     padding: 40px 0;
     background: linear-gradient(to right, #ba47ba 0%, #fcf 99%);
@@ -106,5 +112,3 @@ a:hover{
     color:pink;
     
 }
-
-
