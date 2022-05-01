@@ -4,14 +4,17 @@ body
     background-color: rgb(235, 161, 237);
 }
 
-.page-footer {
+
+.footer-basic {
     padding: 40px 0;
-    background: linear-gradient(to right, #ba47ba 0%, #fcf 99%);
-    color: rgb(184, 182, 182);
+    background  : #FFC0CB;
+    background: linear-gradient(120deg, #FF42A2 0%, #ffc8d6  50%, #FF4DA6 100%);
+    color: #FF42A2;
     border-radius: 5px;
+  
 }
 
-.page-footer ul {
+.footer-basic ul {
     padding: 0;
     list-style: none;
     text-align: center;
@@ -20,95 +23,53 @@ body
     margin-bottom: 0;
 }
 
-.page-footer li {
+.footer-basic li {
     padding: 0 10px;
 }
 
-.page-footer ul li {
+.footer-basic ul a {
     color: inherit;
-
     text-decoration: none;
     opacity: 0.8;
 }
 
 
 
-.page-footer .list-unstyled {
+.footer-basic .social {
     text-align: center;
     padding-bottom: 25px;
 }
 
-.page-footer .list-unstyled >li {
-    font-size: 14px;
+.footer-basic .social>a {
+    font-size: 24px;
     width: 40px;
     height: 40px;
     line-height: 40px;
-    display: inline-flex;
+    display: inline-block;
     text-align: center;
-    border-radius: 60%;
-    border: 1px solid rgb(204, 204, 204);
-    margin: 10px 8px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    margin: 0 8px;
     color: inherit;
-    opacity: 1;
-    flex-direction: row;
-    justify-content: space-evenly;
-   align-items: center;
-    
+    opacity: 0.75;
+    border-color: #FF42A2;
 }
 
-.footer-basic .list-unstyled >li:hover {
-    color: #222121;
-    background-color: rgb(204, 204, 204);
+.footer-basic .social>a:hover {
+    color: #FFC0CB;
+    background-color: #FF42A2;
 }
 
-.footer-copyright {
-    box-sizing: border-box;
-    margin-top: 15px;
-    text-align: center;
-    font-size: 13px;
-    color: rgb(226, 226, 226);
-    margin-bottom: 0;
-   
-    border-radius: 5px;
-}
 
-ul  :hover{
-    background-color:pink;
-    color: rgb(186, 71, 186);
-    transition-delay: 100ms;
-   margin: 7.5;
-}
-
-h1{
-    text-align: center;
-    margin-top: 200px;
-    margin-bottom: 100px;
-    
-}
-
-i{
-    color:pink;
-}
-
-.mail{
+.footer-content {
     text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
-    color:pink;
-}
-
-a{
-    color:pink;
     text-decoration: none;
-}
-a:hover{
-    color:pink;
+    justify-content: space-between;
 }
 
-.contact{
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color:pink;
+body{
+    font-weight: bold;
     
 }
