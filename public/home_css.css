@@ -144,7 +144,7 @@
 
 body{
     font-weight: bold;
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto", sans-serif, Open Sans;
     
 }
 
@@ -341,3 +341,54 @@ body{
   border-right: 1.5625rem solid transparent;
   border-top: 1.25rem solid rgba(247, 200, 235, 0.951);
 }
+h1
+{
+  margin-bottom: 0px;
+}
+.container1
+{
+  display: block;
+  width: 960px;
+  margin: 0px auto;
+  overflow: hidden;
+  padding-bottom: 300px;
+}
+
+figure
+{
+  background-color: #0e0e0e;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  width: 49%;
+  height: 400px;
+  margin: 0px;
+  margin-bottom: 10px;
+}
+
+.scrolleffect1
+{
+  perspective: 800px;
+  -webkit-transform: translateX(-100%) rotate(90deg);
+  transform: translateX(-100%) rotate(90deg);
+ -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.scrolleffect2
+{
+  perspective: 800px;
+  -webkit-transform: translateX(100%) rotate(-90deg);
+  transform: translateX(100%) rotate(-90deg);
+ -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.scrolleffect1.open,
+.scrolleffect2.open
+{
+  -webkit-transform: translateX(0%) rotateX(0deg);
+  transform: translateX(0%) rotateX(0deg);
+}
+

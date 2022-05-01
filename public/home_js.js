@@ -1,3 +1,4 @@
+//Js for Navbar Start
 function test() {
 	var tabsNewAnim = $("#navbarSupportedContent");
 	var selectorNewAnim = $("#navbarSupportedContent").find("li").length;
@@ -44,35 +45,45 @@ $(".navbar-toggler").click(function () {
 	});
 });
 
-// --------------add active class-on another-page move----------
+
 jQuery(document).ready(function ($) {
-	// Get current path and find target link
+	
 	var path = window.location.pathname.split("/").pop();
 
-	// Account for home page with empty path
+	
 	if (path == "") {
 		path = "index.html";
 	}
 
 	var target = $('#navbarSupportedContent ul li a[href="' + path + '"]');
-	// Add active class to target link
+	
 	target.parent().addClass("active");
 });
+// Js Navbar End
 
-// Add active class on another page linked
-// ==========================================
-// $(window).on('load',function () {
-//     var current = location.pathname;
-//     console.log(current);
-//     $('#navbarSupportedContent ul li a').each(function(){
-//         var $this = $(this);
-//         // if the current path is like this link, make it active
-//         if($this.attr('href').indexOf(current) !== -1){
-//             $this.parent().addClass('active');
-//             $this.parents('.menu-submenu').addClass('show-dropdown');
-//             $this.parents('.menu-submenu').parent().addClass('active');
-//         }else{
-//             $this.parent().removeClass('active');
-//         }
-//     })
-// });
+
+// Js code for scroll effect
+$(window).on('scroll', function()
+{	
+	add_onscroll_effect($('.scrolleffect1'), 'open', 767, 200);
+  add_onscroll_effect($('.scrolleffect2'), 'open', 767, 200);
+});
+function add_onscroll_effect(obj, trigger_class, win_width=0, scarto=0)
+{
+	if ( $(window).width() < win_width ) return;
+	if ( obj.length == 0 ) return;
+
+	var currOffset 	= 0,
+		win_scroll 	= $(window).scrollTop();
+
+	obj.each(function(index)
+	{
+		currOffset = ( $(this).offset().top - scarto );
+
+		if ( win_scroll > currOffset )
+		{
+			$(this).addClass(trigger_class);
+		}
+	});
+}
+// Js scroll code end
