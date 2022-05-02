@@ -231,5 +231,96 @@ body{
 		left: -25px;
 	}
 }
+#polaroids {
+	position: relative;
+	width: 100%;
+	min-height: 515px;
+	margin: 80px auto 0 auto;
+	overflow: hidden;
+  }
+  .polaroid {
+	position: absolute;
+	padding: 45px 80px;
+	width: 64%;
+	margin: 0 18%;
+  }
+  .polaroid-image {
+	max-width: 700px;
+	margin: auto !important;
+  }
+	#content-container .polaroid p {
+	  font-size: 21px !important;
+	}
+  .polaroid:after {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: 30px solid transparent;
+	border-right: 0;
+	margin-left: -43.5px; 
+  }
+  .arrow-previous {
+	font-size: 28px;
+	cursor: pointer;
+	position: absolute;
+	top: 45%;
+	left: 8%;
+	z-index: 2;
+  }
+  .arrow-next {
+	font-size: 28px;
+	cursor: pointer;
+	position: absolute;
+	top: 45%;
+	left: 90%;
+	z-index: 2;
+  }
+  
+  
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
+	#content-container .polaroid p {
+	  font-size:22px !important;
+	}
+	#polaroids {
+	  min-height:450px;
+	}
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 980px) {
+	#content-container .polaroid p {
+	  font-size:18px !important;
+	}
+	#polaroids {
+	  min-height:450px;
+	}
+  }
+  
+  @media only screen and (max-width: 767px) {
+	#content-container .polaroid p {
+	  font-size:16px !important;
+	}
+	#polaroids {
+	  min-height:450px;
+	}
+	.arrow-previous {
+	  top: 20%;
+	}
+	.arrow-next {
+	  top: 20%;
+	}
+  }
+  
+  @media only screen and (max-width:375px) {
+	#content-container .polaroid p {
+	  font-size:14px !important;
+	}
+	.polaroid {
+	  padding:45px 20px;
+	}
+	#polaroids {
+	  min-height:450px;
+	}
+  }
 
 

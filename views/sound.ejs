@@ -8,6 +8,10 @@
     integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
@@ -60,48 +64,40 @@
       </div>
     </nav>
   <!--Navbar Closing-->
-  <br>
-  <br>
-  <br>
-  <br>
+  
     <!-- Carousel-->
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <div class="container" id="content-container">
+      <div class="row">
+          <div class="col-xs-16" id="polaroids">
+            <div onclick="previousPolaroid();" class="glyphicon glyphicon-chevron-left arrow-previous"></div>
+            <div onclick="nextPolaroid();" class="glyphicon glyphicon-chevron-right arrow-next"></div>
+            
+            <div class="polaroid">
+              <img src="wed1.png" style="width:600px;" class="img-responsive">
+              <p class="text-center">Content will go here</p>
+            </div>
+            
+            <div class="polaroid">
+              <img src="wed2.jpeg" style="width:600px;" class="img-responsive">
+              <p class="text-center">Content will go here</p>
+            </div>
+            
+            <div class="polaroid">
+              <img src="wed3.png" style="width:600px;" class="img-responsive">
+              <p class="text-center">Content will go here</p>
+            </div>
+            
+            <div class="polaroid">
+              <img src="wed3.png" style="width:600px;" class="img-responsive">
+              <p class="text-center">Content will go here</p>
+            </div>
+            
+            <!--<div class="polaroid">
+              <img src="https://www.pixelstalk.net/wp-content/uploads/images1/HD-Spring-Photos-new.jpg" style="width:600px;" class="img-responsive">
+              <p class="text-center">FIVE [4]</p>
+            </div>-->
+          </div>
         </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="wed1.png" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>Some representative placeholder content for the first slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="wed2.jpeg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>Some representative placeholder content for the second slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="wed3.png" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Some representative placeholder content for the third slide.</p>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
       <!-- Carousel End-->
       
