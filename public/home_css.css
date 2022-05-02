@@ -168,6 +168,48 @@ body{
 
 
 /*----------bootstrap-navbar-css------------*/
+
+
+.responsive-nav {
+    display: none;
+    background: rgb(140, 50, 50);
+    height: 130px;
+    width: 100%;
+    display: block;
+}
+.responsive-nav i {
+    margin-right: 2px;
+}
+.responsive-nav li {
+    list-style: none;
+    text-align: center;
+
+}
+.responsive-nav a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+    margin-top: 60px;
+    letter-spacing: 3px;
+}
+
+.responsive-active {
+    color: rgba(236, 171, 171, 0.951);
+}
+.responsive-nav a:hover {
+    color:rgb(113, 113, 255);
+}
+.responsive-nav a:active {
+    color: rgba(236, 171, 171, 0.951);
+}
+
+.logo1 {
+    width: 35px;
+    height: 40px;
+    margin-right: 70px;
+    cursor: pointer;
+}
 .navbar-logo {
 	padding: 15px;
 	color: #fff;
@@ -272,6 +314,9 @@ body{
 }
 
 @media (min-width: 992px) {
+    .responsive-nav {
+        display: none;
+    }
 	.navbar-expand-custom {
 		-ms-flex-flow: row nowrap;
 		flex-flow: row nowrap;
@@ -323,6 +368,10 @@ body{
 		bottom: -25px;
 		left: -25px;
 	}
+
+    .responsive-nav {
+        display: block;
+    }
 }
 .client {
     width: 100%;

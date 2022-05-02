@@ -59,6 +59,9 @@ jQuery(document).ready(function ($) {
 	
 	target.parent().addClass("active");
 });
+
+
+
 // Js Navbar End
 
 
