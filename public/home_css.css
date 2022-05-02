@@ -145,7 +145,17 @@
 body{
     font-weight: bold;
     font-family: "Roboto", sans-serif, Open Sans;
-    
+    background-color: rgb(252, 250, 238);
+}
+
+#home_top_flower{
+    width: 35%;
+}
+
+#sec_top_flower{
+    width: 26.5%;
+    position: absolute;
+    right: 0;
 }
 
 
@@ -160,7 +170,7 @@ body{
 }
 
 .navbar-mainbg {
-	background-color: #f394e1;
+	background-color: rgb(232, 153, 153);
 	padding: 0px;
 }
 #navbarSupportedContent {
@@ -190,7 +200,7 @@ body{
 	position: relative;
 }
 #navbarSupportedContent > ul > li.active > a {
-	color: #6e75f2;
+	color: rgb(158, 64, 64);
 	background-color: transparent;
 	transition: all 0.7s;
 }
