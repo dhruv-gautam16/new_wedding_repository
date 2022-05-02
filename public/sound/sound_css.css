@@ -6,17 +6,16 @@
 	padding: 0;
 }
 
-
-
 .footer-basic {
-    padding: 40px 0;
-    background  : #FFC0CB;
-    background: linear-gradient(120deg, #FF42A2 0%, #ffc8d6  50%, #FF4DA6 100%);
-    color: #FF42A2;
+    padding: 10px 0;
+    background: linear-gradient(120deg, #f1a7a9 10%, #f6cacc 45%, #f6cacc 55%, #f1a7a9 95%);
+    letter-spacing: 0.75px;
+    color: #ff7096;
     border-radius: 5px;
-  
+    font-family: Signika Negative;
 }
 
+/*
 .footer-basic ul {
     padding: 0;
     list-style: none;
@@ -35,12 +34,16 @@
     text-decoration: none;
     opacity: 0.8;
 }
-
+*/
 
 
 .footer-basic .social {
     text-align: center;
-    padding-bottom: 25px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .footer-basic .social>a {
@@ -55,12 +58,17 @@
     margin: 0 8px;
     color: inherit;
     opacity: 0.75;
-    border-color: #FF42A2;
+    /* border-color: #FF42A2; */
+    border-color: #ff7096;
+
 }
 
 .footer-basic .social>a:hover {
-    color: #FFC0CB;
-    background-color: #FF42A2;
+    /* color: #FFC0CB;
+    background-color: #FF42A2; */
+    color: rgb(241, 206, 206);
+    background-color: #ff7096;
+
 }
 
 
@@ -69,14 +77,20 @@
     margin-top: 10px;
     margin-bottom: 10px;
     text-decoration: none;
-    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
-body{
+body {
     font-weight: bold;
-    font-family: "Roboto", sans-serif;
-    
+    font-family: "Roboto", sans-serif, Open Sans;
+
+    background-color: rgb(252, 250, 238);
 }
+
+
 /*----------bootstrap-navbar-css------------*/
 .navbar-logo {
 	padding: 15px;
