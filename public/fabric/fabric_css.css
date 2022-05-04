@@ -136,8 +136,10 @@ body {
 .navbar-logo {
 	padding: 15px;
 	color: #fff;
+	height:78px;
 
 }
+
 
 .navbar-mainbg {
 	background-color: rgb(140, 50, 50);
