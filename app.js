@@ -24,6 +24,9 @@ app.get('/light',(req,res)=>{
 app.get('/sound',(req,res)=>{
     res.render('sound');
 })
+app.get('/registrationform',(req,res)=>{
+    res.render('form');
+})
 
 app.set('view engine', 'ejs');
 app.set('views',path.join(__dirname, 'views'));
