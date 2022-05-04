@@ -452,3 +452,106 @@ figure
 #test_flower{
     width: 43%;
 }
+
+/*Scroll effect css starts*/
+.container2 {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+  }
+
+  .credit {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-family: Termina, sans-serif;
+    font-weight: 800;
+    font-size: 0.7rem;
+  }
+  
+  .credit a {
+    color: #1a292c;
+    text-transform: lowercase;
+  }
+  
+  .container2:nth-child(2) {
+    background: #3c564f;
+  }
+  .container2:nth-child(1) {
+    background: #b69187;
+  }
+  .container2:nth-child(4) {
+    background: #bcb8ad;
+  }
+  .container2:nth-child(3) {
+    background: #b6916d;
+  }
+
+  
+#scroll_img {
+    height: 100%;
+    width: auto;
+    max-width: 75vw;
+    object-fit: contain;
+  }
+  h2 {
+    font-family: Termina, sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    -webkit-text-stroke: 2px white;
+    text-stroke: 2px white;
+    color: transparent;
+    font-size: clamp(3rem, 10vw, 6rem);
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    width: 90%;
+    height: 50%;
+    z-index: 99;
+    display: grid;
+    place-items: center;
+  }
+  
+  body:not(.no-js) .image-wrap {
+    transition: 1s ease-out;
+    transition-delay: 0.2s;
+    position: relative;
+    width: auto;
+    height: 80vh;
+    overflow: hidden;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    visibility: hidden;
+  }
+  
+  body:not(.no-js) .image-wrap img {
+    transform: scale(1.3);
+    transition: 2s ease-out;
+  }
+  
+  body:not(.no-js) .animating .image-wrap {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    visibility: visible;
+    transform: skewY(0);
+  }
+  
+  body:not(.no-js) .animating img {
+    transform: scale(1);
+    transition: 4s ease-out;
+  }
+  
+  body:not(.no-js) .fadeup {
+    opacity: 0;
+    transition: 0.4s ease-out;
+    transform: translateY(40px);
+  }
+  
+  body:not(.no-js) .fading-up {
+    opacity: 1;
+    transition: 1s ease-out;
+    transform: translateY(0px);
+    transition-delay: 0.7s;
+  }
+  
+/*Scroll effect css ends*/
