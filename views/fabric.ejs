@@ -2,156 +2,743 @@
 <html>
 
 <head>
-  <title>Fabric Page</title>
-  <!-- Bootstarp link-->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
-    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-    crossorigin="anonymous"></script>
-  <!-- External CSS and JS link-->
-  <script src="fabric_js.js"></script>
-  <link rel="stylesheet" href="fabric_css.css">
-  <link href='https://fonts.googleapis.com/css?family=Signika Negative' rel='stylesheet'>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+	<title>Fabric Page</title>
+	<!-- Bootstarp link-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+		integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.css" />
+
+	<script src="https://unpkg.com/swiper@8/swiper-bundle.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+		integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+		integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+		crossorigin="anonymous"></script>
+	<!-- External CSS and JS link-->
+	<link rel="stylesheet" href="fabric_css.css" />
+	<link href="https://fonts.googleapis.com/css?family=Signika Negative" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
 </head>
 
 <body>
-  <!--Navbar Opening-->
-  <nav class="navbar navbar-expand-custom navbar-mainbg">
-    <img class="navbar-brand navbar-logo" src="Manoj_logo.png">
-    <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false"
-      aria-label="Toggle navigation">
-      <i class="fas fa-bars text-white"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav nav-links ml-auto">
-        <div class="hori-selector">
-          <div class="left"></div>
-          <div class="right"></div>
-        </div>
-        <li class="nav-item ">
-          <a class="nav-link" href="/"><i class="fa fa-heart-o"></i>Home</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="/fabric"><i class="fa fa-heart-o"></i>Fabric</a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="/flowers"><i class="fa fa-heart-o"></i>Flowers</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/light"><i class="fa fa-heart-o"></i>Lights</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/sound"><i class="fa fa-heart-o"></i>Sound</a>
-        </li>
+	<!--Navbar Opening-->
+	<nav class="navbar navbar-expand-custom navbar-mainbg">
+		<img class="navbar-brand navbar-logo" src="Manoj_logo.png" />
+		<button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<i class="fas fa-bars text-white"></i>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav nav-links ml-auto">
+				<div class="hori-selector">
+					<div class="left"></div>
+					<div class="right"></div>
+				</div>
+				<li class="nav-item">
+					<a class="nav-link" href="/"><i class="fa fa-heart-o"></i>Home</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="/fabric"><i class="fa fa-heart-o"></i>Fabric</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/flowers"><i class="fa fa-heart-o"></i>Flowers</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/light"><i class="fa fa-heart-o"></i>Lights</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/sound"><i class="fa fa-heart-o"></i>Sound</a>
+				</li>
+			</ul>
+		</div>
+		<img id="rzp1-button" class="navbar-brand logo1" src="LogoMakr-14RigK.png" />
+		<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+	</nav>
 
+	<div class="responsive-nav">
+		<ul>
+			<li>
+				<a class="responsive-active" href="#"><i class="fa fa-heart-o"></i>Home</a>
+			</li>
+			<li>
+				<a class="" href="/fabric"><i class="fa fa-heart-o"></i>Fabric</a>
+			</li>
+			<li>
+				<a class="" href="/flowers"><i class="fa fa-heart-o"></i>Flowers</a>
+			</li>
+			<li>
+				<a class="" href="/light"><i class="fa fa-heart-o"></i>Light</a>
+			</li>
+			<li>
+				<a class="" href="/sound"><i class="fa fa-heart-o"></i>Sound</a>
+			</li>
+		</ul>
+	</div>
+	<!--Navbar Closing-->
 
+	<!-- Carousel-->
+	<div class="container" id="content-container">
+		<div class="row">
+			<div class="col-xs-16" id="polaroids">
+				<div onclick="previousPolaroid();" class="glyphicon glyphicon-chevron-left arrow-previous"></div>
+				<div onclick="nextPolaroid();" class="glyphicon glyphicon-chevron-right arrow-next"></div>
 
-      </ul>
+				<div class="polaroid">
+					<img src="fab1.png" style="width: 600px" class="img-responsive" />
+					<p class="text-center">Content will go here</p>
+				</div>
 
-    </div>
-    <img id="rzp1-button" class="navbar-brand logo1 " src="LogoMakr-14RigK.png">
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-  </nav>
+				<div class="polaroid">
+					<img src="fab2.png" style="width: 600px" class="img-responsive" />
+					<p class="text-center">Content will go here</p>
+				</div>
 
-  <div class="responsive-nav">
-    <ul>
-      <li><a class="responsive-active" href="#"><i class="fa fa-heart-o"></i>Home</a></li>
-      <li><a class="" href="/fabric"><i class="fa fa-heart-o"></i>Fabric</a></li>
-      <li><a class="" href="/flowers"><i class="fa fa-heart-o"></i>Flowers</a></li>
-      <li><a class="" href="/light"><i class="fa fa-heart-o"></i>Light</a></li>
-      <li><a class="" href="/sound"><i class="fa fa-heart-o"></i>Sound</a></li>
-    </ul>
-  </div>
-  <!--Navbar Closing-->
-  
-  <!-- Carousel-->
-  <div class="container" id="content-container">
-    <div class="row">
-        <div class="col-xs-16" id="polaroids">
-          <div onclick="previousPolaroid();" class="glyphicon glyphicon-chevron-left arrow-previous"></div>
-          <div onclick="nextPolaroid();" class="glyphicon glyphicon-chevron-right arrow-next"></div>
-          
-          <div class="polaroid">
-            <img src="fab1.png" style="width:600px;" class="img-responsive">
-            <p class="text-center">Content will go here</p>
-          </div>
-          
-          <div class="polaroid">
-            <img src="fab2.png" style="width:600px;" class="img-responsive">
-            <p class="text-center">Content will go here</p>
-          </div>
-          
-          <div class="polaroid">
-            <img src="fab3.png" style="width:600px;" class="img-responsive">
-            <p class="text-center">Content will go here</p>
-          </div>
-          
-          <div class="polaroid">
-            <img src="fab1.png" style="width:600px;" class="img-responsive">
-            <p class="text-center">Content will go here</p>
-          </div>
-      
-        </div>
-      </div>
-    </div>
-  <!-- Carousel End-->
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  
+				<div class="polaroid">
+					<img src="fab3.png" style="width: 600px" class="img-responsive" />
+					<p class="text-center">Content will go here</p>
+				</div>
 
-  <div class="footer-basic">
-    <footer>
-        <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i
-                    class="icon ion-social-facebook"></i></a></div>
-        <div class="footer-content">
-            <div class="envelope"><span><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                <a href="#" style="text-decoration: none; color: #FDFEFF;  font-size: 16px;">abc@gmail.com</a>
-            </div>
-            <div class="phone">
-                <i class="fa fa-phone" aria-hidden="true"></i>
-                <a href="tel:+999939399393"
-                    style="text-decoration: none; color: #FDFEFF; font-size: 16px;">+999939399393</a>
-            </div>
-            <div class="maps">
-                <i class="material-icons" style="font-size:20px;color: #ff7096;">place</i>
-                <a href="https://www.google.co.in/maps/place/Jharkhand+829122/data=!4m6!3m5!1s0x39f4f401e2d4252f:0xb3fbc9057d2aee36!8m2!3d23.6097665!4d85.525174!16s%2Fg%2F1hhj5drjk?authuser=0&hl=en&rclk=1"
-                    style="text-decoration: none; color: #FDFEFF; font-size: 16px;" target="_blank">Ramgarh
-                    Cantt</a>
-            </div>
-        </div>
+				<div class="polaroid">
+					<img src="fab1.png" style="width: 600px" class="img-responsive" />
+					<p class="text-center">Content will go here</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Carousel End-->
+	<div class="swiper mySwiper">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<div class="container1">
+					<div class="card" data-desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!">
+						<div class="card-header">
+							<img src="fab1.png" alt="rover" />
+						</div>
+						<div class="card-body">
+							<h3 class="title">Lycra</h3>
+							<buttons>
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-btn">
+											<button id="downlycra" class="btn btn-default" onclick=" downlycra('0')">
+												<span class="glyphicon glyphicon-minus"></span>
+											</button>
+										</div>
+										<input type="text" id="myNumberlycra" class="form-control input-number"
+											value="1" style="text-align: center" />
+										<div class="input-group-btn">
+											<button id="uplycra" class="btn btn-default" onclick="uplycra('10')">
+												<span class="glyphicon glyphicon-plus"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="button">add to cart</div>
+							</buttons>
+						</div>
+					</div>
+					<div class="card" data-desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!">
+						<div class="card-header">
+							<img src="fab1.png" alt=" " />
+						</div>
+						<div class="card-body">
+							<h3 class="title">Sypter</h3>
+							<buttons>
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-btn">
+											<button id="downsypter" class="btn btn-default" onclick=" downsypter('0')">
+												<span class="glyphicon glyphicon-minus"></span>
+											</button>
+										</div>
+										<input type="text" id="myNumbersypter" class="form-control input-number"
+											value="1" style="text-align: center" />
+										<div class="input-group-btn">
+											<button id="upsypter" class="btn btn-default" onclick="upsypter('10')">
+												<span class="glyphicon glyphicon-plus"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="button">add to cart</div>
+							</buttons>
+						</div>
+					</div>
 
-        <!-- Copyright -->
-        <div class=" footer-copyright text-center py-3" style="color: #FDFEFF;">©
-            <a href="/" style="text-decoration: none; color: #FDFEFF;"> wedding.com</a>
-            <span style="text-decoration: none; color: #FDFEFF;  font-size: 16px;">2022 Manoj
-                Tent Agency.
-                All Rights Reserved</span>
-        </div>
-        <!-- Copyright -->
-</div>
-</footer>
-</div>
-<!--Razorpay Script-->
-<script>
+					<div class="card" data-desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!">
+						<div class="card-header">
+							<img src="fab1.png" alt=" " />
+						</div>
+						<div class="card-body">
+							<h3 class="title">Galaxy</h3>
+							<buttons>
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-btn">
+											<button id="downgalaxy" class="btn btn-default" onclick=" downgalaxy('0')">
+												<span class="glyphicon glyphicon-minus"></span>
+											</button>
+										</div>
+										<input type="text" id="myNumbergalaxy" class="form-control input-number"
+											value="1" style="text-align: center" />
+										<div class="input-group-btn">
+											<button id="upgalaxy" class="btn btn-default" onclick="upgalaxy('10')">
+												<span class="glyphicon glyphicon-plus"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="button">add to cart</div>
+							</buttons>
+						</div>
+					</div>
+
+					<div class="card" data-desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!">
+						<div class="card-header">
+							<img src="fab1.png" alt=" " />
+						</div>
+						<div class="card-body">
+							<h3 class="title">Micro</h3>
+							<buttons>
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-btn">
+											<button id="downmicro" class="btn btn-default" onclick=" downmicro('0')">
+												<span class="glyphicon glyphicon-minus"></span>
+											</button>
+										</div>
+										<input type="text" id="myNumbermicro" class="form-control input-number"
+											value="1" style="text-align: center" />
+										<div class="input-group-btn">
+											<button id="upmicro" class="btn btn-default" onclick="upmicro('10')">
+												<span class="glyphicon glyphicon-plus"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="button">add to cart</div>
+							</buttons>
+						</div>
+					</div>
+					<div class="card" data-desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!">
+						<div class="card-header">
+							<img src="fab1.png" alt=" " />
+						</div>
+						<div class="card-body">
+							<h3 class="title">Velvet</h3>
+							<buttons>
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-btn">
+											<button id="downvelvet" class="btn btn-default" onclick=" downvelvet('0')">
+												<span class="glyphicon glyphicon-minus"></span>
+											</button>
+										</div>
+										<input type="text" id="myNumbervelvet" class="form-control input-number"
+											value="1" style="text-align: center" />
+										<div class="input-group-btn">
+											<button id="upvelvet" class="btn btn-default" onclick="upvelvet('10')">
+												<span class="glyphicon glyphicon-plus"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="button">add to cart</div>
+							</buttons>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="container1">
+					<div class="card" data-desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!">
+						<div class="card-header">
+							<img src="fab1.png" alt="rover" />
+						</div>
+						<div class="card-body">
+							<h3 class="title">Lycra</h3>
+							<buttons>
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-btn">
+											<button id="downlycra" class="btn btn-default" onclick=" downlycra('0')">
+												<span class="glyphicon glyphicon-minus"></span>
+											</button>
+										</div>
+										<input type="text" id="myNumberlycra" class="form-control input-number"
+											value="1" style="text-align: center" />
+										<div class="input-group-btn">
+											<button id="uplycra" class="btn btn-default" onclick="uplycra('10')">
+												<span class="glyphicon glyphicon-plus"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="button">add to cart</div>
+							</buttons>
+						</div>
+					</div>
+					<div class="card" data-desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!">
+						<div class="card-header">
+							<img src="fab1.png" alt=" " />
+						</div>
+						<div class="card-body">
+							<h3 class="title">Sypter</h3>
+							<buttons>
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-btn">
+											<button id="downsypter" class="btn btn-default" onclick=" downsypter('0')">
+												<span class="glyphicon glyphicon-minus"></span>
+											</button>
+										</div>
+										<input type="text" id="myNumbersypter" class="form-control input-number"
+											value="1" style="text-align: center" />
+										<div class="input-group-btn">
+											<button id="upsypter" class="btn btn-default" onclick="upsypter('10')">
+												<span class="glyphicon glyphicon-plus"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="button">add to cart</div>
+							</buttons>
+						</div>
+					</div>
+
+					<div class="card" data-desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!">
+						<div class="card-header">
+							<img src="fab1.png" alt=" " />
+						</div>
+						<div class="card-body">
+							<h3 class="title">Galaxy</h3>
+							<buttons>
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-btn">
+											<button id="downgalaxy" class="btn btn-default" onclick=" downgalaxy('0')">
+												<span class="glyphicon glyphicon-minus"></span>
+											</button>
+										</div>
+										<input type="text" id="myNumbergalaxy" class="form-control input-number"
+											value="1" style="text-align: center" />
+										<div class="input-group-btn">
+											<button id="upgalaxy" class="btn btn-default" onclick="upgalaxy('10')">
+												<span class="glyphicon glyphicon-plus"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="button">add to cart</div>
+							</buttons>
+						</div>
+					</div>
+
+					<div class="card" data-desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!">
+						<div class="card-header">
+							<img src="fab1.png" alt=" " />
+						</div>
+						<div class="card-body">
+							<h3 class="title">Micro</h3>
+							<buttons>
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-btn">
+											<button id="downmicro" class="btn btn-default" onclick=" downmicro('0')">
+												<span class="glyphicon glyphicon-minus"></span>
+											</button>
+										</div>
+										<input type="text" id="myNumbermicro" class="form-control input-number"
+											value="1" style="text-align: center" />
+										<div class="input-group-btn">
+											<button id="upmicro" class="btn btn-default" onclick="upmicro('10')">
+												<span class="glyphicon glyphicon-plus"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="button">add to cart</div>
+							</buttons>
+						</div>
+					</div>
+					<div class="card" data-desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!">
+						<div class="card-header">
+							<img src="fab1.png" alt=" " />
+						</div>
+						<div class="card-body">
+							<h3 class="title">Velvet</h3>
+							<buttons>
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-btn">
+											<button id="downvelvet" class="btn btn-default" onclick=" downvelvet('0')">
+												<span class="glyphicon glyphicon-minus"></span>
+											</button>
+										</div>
+										<input type="text" id="myNumbervelvet" class="form-control input-number"
+											value="1" style="text-align: center" />
+										<div class="input-group-btn">
+											<button id="upvelvet" class="btn btn-default" onclick="upvelvet('10')">
+												<span class="glyphicon glyphicon-plus"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="button">add to cart</div>
+							</buttons>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="container1">
+					<div class="card" data-desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!">
+						<div class="card-header">
+							<img src="fab1.png" alt="rover" />
+						</div>
+						<div class="card-body">
+							<h3 class="title">Tarda</h3>
+							<buttons>
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-btn">
+											<button id="downtarda" class="btn btn-default" onclick=" downtarda('0')">
+												<span class="glyphicon glyphicon-minus"></span>
+											</button>
+										</div>
+										<input type="text" id="myNumbertarda" class="form-control input-number"
+											value="1" style="text-align: center" />
+										<div class="input-group-btn">
+											<button id="uptarda" class="btn btn-default" onclick="uptarda('10')">
+												<span class="glyphicon glyphicon-plus"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="button">add to cart</div>
+							</buttons>
+						</div>
+					</div>
+					<div class="card" data-desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!">
+						<div class="card-header">
+							<img src="fab1.png" alt=" " />
+						</div>
+						<div class="card-body">
+							<h3 class="title">Frill</h3>
+							<buttons>
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-btn">
+											<button id="downfrill" class="btn btn-default" onclick=" downfrill('0')">
+												<span class="glyphicon glyphicon-minus"></span>
+											</button>
+										</div>
+										<input type="text" id="myNumberfrill" class="form-control input-number"
+											value="1" style="text-align: center" />
+										<div class="input-group-btn">
+											<button id="upfrill" class="btn btn-default" onclick="upfrill('10')">
+												<span class="glyphicon glyphicon-plus"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="button">add to cart</div>
+							</buttons>
+						</div>
+					</div>
+
+					<div class="card" data-desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!">
+						<div class="card-header">
+							<img src="fab1.png" alt=" " />
+						</div>
+						<div class="card-body">
+							<h3 class="title">Gate</h3>
+							<buttons>
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-btn">
+											<button id="gateshalbo" class="btn btn-default" onclick=" gateshalbo('0')">
+												<span class="glyphicon glyphicon-minus"></span>
+											</button>
+										</div>
+										<input type="text" id="myNumbergateshalbo" class="form-control input-number"
+											value="1" style="text-align: center" />
+										<div class="input-group-btn">
+											<button id="upgateshalbo" class="btn btn-default"
+												onclick="upgateshalbo('10')">
+												<span class="glyphicon glyphicon-plus"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="button">add to cart</div>
+							</buttons>
+						</div>
+					</div>
+
+					<div class="card" data-desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!">
+						<div class="card-header">
+							<img src="fab1.png" alt=" " />
+						</div>
+						<div class="card-body">
+							<h3 class="title">Chair</h3>
+							<buttons>
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-btn">
+											<button id="chaircover" class="btn btn-default" onclick="chaircover('0')">
+												<span class="glyphicon glyphicon-minus"></span>
+											</button>
+										</div>
+										<input type="text" id="myNumberchaircover" class="form-control input-number"
+											value="1" style="text-align: center" />
+										<div class="input-group-btn">
+											<button id="upchaircover" class="btn btn-default"
+												onclick="upchaircover('10')">
+												<span class="glyphicon glyphicon-plus"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="button">add to cart</div>
+							</buttons>
+						</div>
+					</div>
+					<div class="card" data-desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!">
+						<div class="card-header">
+							<img src="fab1.png" alt=" " />
+						</div>
+						<div class="card-body">
+							<h3 class="title">Table</h3>
+							<buttons>
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-btn">
+											<button id="downtablecover" class="btn btn-default"
+												onclick=" downtablecover('0')">
+												<span class="glyphicon glyphicon-minus"></span>
+											</button>
+										</div>
+										<input type="text" id="myNumbertablecover" class="form-control input-number"
+											value="1" style="text-align: center" />
+										<div class="input-group-btn">
+											<button id="uptablecover" class="btn btn-default"
+												onclick="uptablecover('10')">
+												<span class="glyphicon glyphicon-plus"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="button">add to cart</div>
+							</buttons>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="container1">
+					<div class="card" data-desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!">
+						<div class="card-header">
+							<img src="fab1.png" alt="rover" />
+						</div>
+						<div class="card-body">
+							<h3 class="title">Lycra</h3>
+							<buttons>
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-btn">
+											<button id="downlycra" class="btn btn-default" onclick=" downlycra('0')">
+												<span class="glyphicon glyphicon-minus"></span>
+											</button>
+										</div>
+										<input type="text" id="myNumberlycra" class="form-control input-number"
+											value="1" style="text-align: center" />
+										<div class="input-group-btn">
+											<button id="uplycra" class="btn btn-default" onclick="uplycra('10')">
+												<span class="glyphicon glyphicon-plus"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="button">add to cart</div>
+							</buttons>
+						</div>
+					</div>
+					<div class="card" data-desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!">
+						<div class="card-header">
+							<img src="fab1.png" alt=" " />
+						</div>
+						<div class="card-body">
+							<h3 class="title">Sypter</h3>
+							<buttons>
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-btn">
+											<button id="downsypter" class="btn btn-default" onclick=" downsypter('0')">
+												<span class="glyphicon glyphicon-minus"></span>
+											</button>
+										</div>
+										<input type="text" id="myNumbersypter" class="form-control input-number"
+											value="1" style="text-align: center" />
+										<div class="input-group-btn">
+											<button id="upsypter" class="btn btn-default" onclick="upsypter('10')">
+												<span class="glyphicon glyphicon-plus"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="button">add to cart</div>
+							</buttons>
+						</div>
+					</div>
+
+					<div class="card" data-desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!">
+						<div class="card-header">
+							<img src="fab1.png" alt=" " />
+						</div>
+						<div class="card-body">
+							<h3 class="title">Galaxy</h3>
+							<buttons>
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-btn">
+											<button id="downgalaxy" class="btn btn-default" onclick=" downgalaxy('0')">
+												<span class="glyphicon glyphicon-minus"></span>
+											</button>
+										</div>
+										<input type="text" id="myNumbergalaxy" class="form-control input-number"
+											value="1" style="text-align: center" />
+										<div class="input-group-btn">
+											<button id="upgalaxy" class="btn btn-default" onclick="upgalaxy('10')">
+												<span class="glyphicon glyphicon-plus"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="button">add to cart</div>
+							</buttons>
+						</div>
+					</div>
+
+					<div class="card" data-desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!">
+						<div class="card-header">
+							<img src="fab1.png" alt=" " />
+						</div>
+						<div class="card-body">
+							<h3 class="title">Micro</h3>
+							<buttons>
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-btn">
+											<button id="downmicro" class="btn btn-default" onclick=" downmicro('0')">
+												<span class="glyphicon glyphicon-minus"></span>
+											</button>
+										</div>
+										<input type="text" id="myNumbermicro" class="form-control input-number"
+											value="1" style="text-align: center" />
+										<div class="input-group-btn">
+											<button id="upmicro" class="btn btn-default" onclick="upmicro('10')">
+												<span class="glyphicon glyphicon-plus"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="button">add to cart</div>
+							</buttons>
+						</div>
+					</div>
+					<div class="card" data-desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!">
+						<div class="card-header">
+							<img src="fab1.png" alt=" " />
+						</div>
+						<div class="card-body">
+							<h3 class="title">Velvet</h3>
+							<buttons>
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-btn">
+											<button id="downvelvet" class="btn btn-default" onclick=" downvelvet('0')">
+												<span class="glyphicon glyphicon-minus"></span>
+											</button>
+										</div>
+										<input type="text" id="myNumbervelvet" class="form-control input-number"
+											value="1" style="text-align: center" />
+										<div class="input-group-btn">
+											<button id="upvelvet" class="btn btn-default" onclick="upvelvet('10')">
+												<span class="glyphicon glyphicon-plus"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="button">add to cart</div>
+							</buttons>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">Slide 5</div>
+			<div class="swiper-slide">Slide 6</div>
+			<div class="swiper-slide">Slide 7</div>
+			<div class="swiper-slide">Slide 8</div>
+			<div class="swiper-slide">Slide 9</div>
+		</div>
+		<div class="swiper-button-next"></div>
+		<div class="swiper-button-prev"></div>
+	</div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+
+	<div class="footer-basic">
+		<footer>
+			<div class="social">
+				<a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i
+						class="icon ion-social-facebook"></i></a>
+			</div>
+			<div class="footer-content">
+				<div class="envelope">
+					<span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+					<a href="#" style="text-decoration: none; color: #fdfeff; font-size: 16px">abc@gmail.com</a>
+				</div>
+				<div class="phone">
+					<i class="fa fa-phone" aria-hidden="true"></i>
+					<a href="tel:+999939399393"
+						style="text-decoration: none; color: #fdfeff; font-size: 16px">+999939399393</a>
+				</div>
+				<div class="maps">
+					<i class="material-icons" style="font-size: 20px; color: #ff7096">place</i>
+					<a href="https://www.google.co.in/maps/place/Jharkhand+829122/data=!4m6!3m5!1s0x39f4f401e2d4252f:0xb3fbc9057d2aee36!8m2!3d23.6097665!4d85.525174!16s%2Fg%2F1hhj5drjk?authuser=0&hl=en&rclk=1"
+						style="text-decoration: none; color: #fdfeff; font-size: 16px" target="_blank">Ramgarh Cantt</a>
+				</div>
+			</div>
+
+			<!-- Copyright -->
+			<div class="footer-copyright text-center py-3" style="color: #fdfeff">
+				©
+				<a href="/" style="text-decoration: none; color: #fdfeff">
+					wedding.com</a>
+				<span style="text-decoration: none; color: #fdfeff; font-size: 16px">2022 Manoj Tent Agency. All Rights
+					Reserved</span>
+			</div>
+		</footer>
+		<!-- Copyright -->
+	</div>
+	<!--Razorpay Script-->
+	<!-- <script>
 var orderId ;
 $(document).ready(function(){
     var settings = {
@@ -216,7 +803,12 @@ rzp1.open();
 e.preventDefault();
 }
 
-</script>
+</script> -->
 </body>
+<script src="fabric_js.js"></script>
+<script>
+	// Running init command
+	swiper.init();
+</script>
 
 </html>
