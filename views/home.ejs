@@ -27,12 +27,22 @@
 </head>
 
 <body>
+  
+  </script>
   <div class="loader">
     <div></div>
     <div></div>
   </div>
+  <script>
+    $(window).on('load', function () {
+      $(".loader").fadeOut(8000);
+      $(".content").fadeIn(11000);
+    });
+  </script>
+
   <!--Add all the html content inside this-->
   <div class="content">
+
   
     <!--Navbar Opening-->
     <nav class="navbar navbar-expand-custom navbar-mainbg">
@@ -81,6 +91,18 @@
       </ul>
     </div>
       <!--Navbar Closing-->
+
+    <!--Google Translate starts-->
+    <div id ="google_element"></div>
+    <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+    <script>
+      function loadGoogleTranslate()
+      {
+        new google.translate.TranslateElement("google_element");
+
+      }
+    </script>
+    <!--Google Translate ends-->
     <!-- flower image -->
     <img src="home_top_flower.png" alt="" id="home_top_flower">
     <img src="top_flower_2.png" alt="second_top flower" id="sec_top_flower">
@@ -258,12 +280,15 @@
 
 
   </div>
-  <script>
+<script>
     $(window).on('load', function () {
       $(".loader").fadeOut(8000);
       $(".content").fadeIn(11000);
     });
   </script>
+ 
+  
+
 
 </body>
 
