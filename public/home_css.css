@@ -503,7 +503,7 @@ figure
     font-weight: 800;
     text-transform: uppercase;
     -webkit-text-stroke: 2px white;
-    text-stroke: 2px white;
+    -webkit-text-stroke: 2px white;
     color: transparent;
     font-size: clamp(3rem, 10vw, 6rem);
     position: absolute;
