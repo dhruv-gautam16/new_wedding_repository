@@ -1,0 +1,114 @@
+[
+    {
+        "name": "Lycra",
+        "image": "./fab1.png",
+        "desc": "sdfsdfafd",
+        "param": {
+            "number": {
+                "max": 20,
+                "min": 0
+            },
+            "colors": ["Grey", "Blue", "Yellow", "Green", "Black", "Purple"]
+        }
+    },
+    {
+        "name": "Lycra",
+        "image": "./fab1.png",
+        "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!",
+        "param": {
+            "number": {
+                "max": 20,
+                "min": 0
+            },
+            "colors": ["Grey", "Blue", "Yellow", "Green", "Black", "Purple"]
+        }
+    },{
+        "name": "Lycra",
+        "image": "./fab1.png",
+        "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!",
+        "param": {
+            "number": {
+                "max": 20,
+                "min": 0
+            },
+            "colors": ["Grey", "Blue", "Yellow", "Green", "Black", "Purple"]
+        }
+    },{
+        "name": "Lycra",
+        "image": "./fab1.png",
+        "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!",
+        "param": {
+            "number": {
+                "max": 20,
+                "min": 0
+            },
+            "colors": ["Grey", "Blue", "Yellow", "Green", "Black", "Purple"]
+        }
+    },{
+        "name": "Lycra",
+        "image": "./fab1.png",
+        "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!",
+        "param": {
+            "number": {
+                "max": 20,
+                "min": 0
+            },
+            "colors": ["Grey", "Blue", "Yellow", "Green", "Black", "Purple"]
+        }
+    },{
+        "name": "Lycra",
+        "image": "./fab1.png",
+        "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!",
+        "param": {
+            "number": {
+                "max": 20,
+                "min": 0
+            },
+            "colors": ["Grey", "Blue", "Yellow", "Green", "Black", "Purple"]
+        }
+    },{
+        "name": "Lycra",
+        "image": "./fab1.png",
+        "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!",
+        "param": {
+            "number": {
+                "max": 20,
+                "min": 0
+            },
+            "colors": ["Grey", "Blue", "Yellow", "Green", "Black", "Purple"]
+        }
+    },{
+        "name": "Lycra",
+        "image": "./fab1.png",
+        "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!",
+        "param": {
+            "number": {
+                "max": 20,
+                "min": 0
+            },
+            "colors": ["Grey", "Blue", "Yellow", "Green", "Black", "Purple"]
+        }
+    },{
+        "name": "Lycra",
+        "image": "./fab1.png",
+        "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!",
+        "param": {
+            "number": {
+                "max": 20,
+                "min": 0
+            },
+            "colors": ["Grey", "Blue", "Yellow", "Green", "Black", "Purple"]
+        }
+    },{
+        "name": "sdsdfasf",
+        "image": "./fab1.png",
+        "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora, eos ut ducimus, voluptatem possimus dignissimos harum corrupti facere molestiae consectetur voluptatum architecto. Odio reiciendis sunt sit repellat corporis accusamus!",
+        "param": {
+            "number": {
+                "max": 5,
+                "min": 0
+            },
+            "colors": ["Grey", "Blue", "Yellow", "Green", "Black", "Purple"]
+        }
+    }
+]

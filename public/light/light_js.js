@@ -1,3 +1,178 @@
+const fabricRequiredAppendHtml = () => {
+	const config = {
+		grid_rows: 5
+	}
+	var jsonData;
+	// CREATE A RANDOM ID
+	const makeid = () => {
+		let result = "id";
+		const characters =
+			"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+		for (var i = 0; i < 15; i++)
+			result += characters.charAt(
+				Math.floor(Math.random() * characters.length)
+			);
+		return result;
+	};
+
+	// GET THE DATA.JSON FILE, PARSE AND APPEND
+	$.get("./data.json", (e) => {
+		jsonData = e;
+		let id = null;
+		for (let i = 0; i < jsonData.length; i++) {
+			if (i % config.grid_rows == 0) {
+				id = makeid();
+				$("#swiper-wrapper").append(`<div class="swiper-slide"><div class="container1" id="${id}"></div></div>`);
+			}
+			let id_inner = [makeid(), makeid()];
+			let elem = '';
+			for (let j in jsonData[i].param.colors) {
+				elem = elem + `<option value="volvo">${jsonData[i].param.colors[j]}</option>`
+			}
+			$(`#${id}`).append(`
+		<div class="card" data-desc="${jsonData[i].desc}">
+			<div class="card-header">
+				<img src="${jsonData[i].image}" alt="An Error Occurred" />
+			</div>
+			<div class="card-body">
+				<h3 class="title">${jsonData[i].name}</h3>
+				<buttons>
+					<div class="form-group">
+						<div class="input-group fabric_container" data-rel="${i}" data-name="${jsonData[i].name}" id="${id_inner[1]}">
+							<select class="combobox" id="${id_inner[1]}_combobox">
+								${elem}
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group fabric_container" data-rel="${i}" data-name="${jsonData[i].name}" id="${id_inner[0]}">
+							<div class="input-group-btn">
+								<button id="${id_inner[0]}_qty_decrement" class="btn btn-default fabric_qty_decrement" data-parent="${id_inner[0]}" data-numeric-min="${jsonData[i].param.number.min}">
+									<span class="glyphicon glyphicon-minus"></span>
+								</button>
+							</div>
+							<input type="text" id="${id_inner[0]}_qty_numPad" value="${jsonData[i].param.number.min}" readonly class="form-control input-number fabric_qty_value" style="text-align: center; width: 75px" />
+							<div class="input-group-btn">
+								<button id="${id_inner[0]}_qty_increment" class="btn btn-default fabric_qty_increment" data-parent="${id_inner[0]}" data-numeric-max="${jsonData[i].param.number.max}">
+									<span class="glyphicon glyphicon-plus"></span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="button">add to cart</div>
+				</buttons>
+			</div>
+		</div>`);
+		}
+
+		const valueChange = (mode, id) => {
+			let value = 0;
+			try {
+				value = parseInt(document.querySelector(`#${id}_qty_numPad`).value)
+			} catch {
+				console.error("Raised Exception at ID: %s. Exception called as ValueCheck with value returned %s.", id, document.querySelector(`#${id}_qty_numPad`).value);
+				console.error("Parameter inside textbox not of type INT. Defaulting to value 0");
+			}
+
+			if (mode == 0 && parseInt($(`#${id}_qty_decrement`).attr("data-numeric-min")) < value)
+				value = value - 1;
+			else if (mode == 1 && parseInt($(`#${id}_qty_increment	`).attr("data-numeric-max")) > value)
+				value = value + 1;
+			else {
+				value = value;
+			}
+			$(`#${id}_qty_numPad`).attr({
+				'value': value
+			});
+		}
+
+		const colorChange = (mode, id) => {
+			let value = 0;
+			const items = $(`#${id}_color_numPad`).attr("data-content").split(",")
+			try {
+				value = parseInt($(`#${id}_color_numPad`).attr("data-curr"))
+			} catch {
+				console.error("Raised Exception at ID: %s. Exception called as ValueCheck.", id);
+				console.error("Parameter inside textbox not of type INT. Defaulting to value 0");
+			}
+
+			if (mode == 0)(value == 0) ? value = parseInt($(`#${id}_color_decrement`).attr("data-max")) : value = value - 1;
+			else if (mode == 1)(value == parseInt($(`#${id}_color_decrement`).attr("data-max")) - 1) ? value = 0 : value = value + 1;
+			else value = value;
+
+			$(`#${id}_color_numPad`).attr({
+				"data-curr": value
+			})
+			$(`#${id}_color_numPad`).attr({
+				'value': items[value]
+			});
+		}
+
+		$(`.fabric_qty_decrement`).on("click", (e) => {
+			valueChange(0, $(e.currentTarget).attr("data-parent"))
+		})
+		$(`.fabric_qty_increment`).on("click", (e) => {
+			valueChange(1, $(e.currentTarget).attr("data-parent"))
+		})
+
+		// SWIPER CODE
+		var swiper = new Swiper(".mySwiper", {
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+		});
+		swiper.init();
+
+		// DESCRIPTION CODE
+		$(".card-header").on("click", (e) => {
+			descDisplay(
+				$($($($(e.currentTarget).parent()).children()[1]).children()[0]).html(),
+				$(e.currentTarget).parent().attr("data-desc"),
+				343,
+				""
+			);
+		});
+
+		const descDisplay = (title, desc, cost, bg) => {
+			$("body").append(`
+			  <div class="infoPanel_bg">
+				  <div class="infopanel">
+					  <div class="img" style="background-image: url('${
+				  bg == "" ? "./fab1.png" : bg
+				}')">
+					  </div>
+					  <div class="info">
+						  <div class="title">${title}</div>
+						  <div class="desc">${desc}</div>
+						  <div class="buttons">
+							  <button class="btn close_infoPanel">
+								  Close Info
+							  </button>
+						  </div>
+					  </div>
+				  </div>
+			  </div>
+			  `);
+			$(".close_infoPanel").on("click", () => {
+				$(".close_infoPanel").off();
+				$(".infoPanel_bg").css({
+					animation: "infoPanel_bg_hide .2s ease-in"
+				});
+				setTimeout(() => {
+					$(".infoPanel_bg").remove();
+				}, 200);
+			});
+		};
+
+	});
+};
+
+fabricRequiredAppendHtml();
+
+//end of cards
+
+
 function test() {
 	var tabsNewAnim = $("#navbarSupportedContent");
 	var selectorNewAnim = $("#navbarSupportedContent").find("li").length;

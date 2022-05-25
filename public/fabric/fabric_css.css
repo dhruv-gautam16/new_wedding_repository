@@ -122,6 +122,10 @@
 	color: whitesmoke;
 }
 
+.fabric_qty_value{
+  background-color: white !important;
+}
+
 .card {
   margin: 10px;
   background-color: rgb(254, 245, 245);
@@ -233,6 +237,16 @@ button {
   top: 1px;
 }
 
+.combobox {
+  background-color: white;
+  border: 1px #d8d8d8 solid;
+  border-radius: .25rem;
+  width: 150px;
+  padding: 5px 0;
+  text-align: center;
+  font-weight: 500;
+}
+
 .card {
   margin: 30px 10px;
   background-color: rgb(247, 232, 232);
@@ -241,7 +255,7 @@ button {
   box-shadow: 0 0 15px -7px rgba(0, 0, 0, 0.2);
   width: 250px;
   transition: .2s cubic-bezier(0.19, 1, 0.22, 1);
-  height: 400px;
+  height: auto;
 }
 
 .card:hover {
@@ -255,42 +269,6 @@ button {
   top: 10px;
   font-size: 30px;
   z-index: 100;
-}
-
-#myNumberlycra {
-  width: 60px;
-}
-
-#myNumbersypter {
-  width: 60px;
-}
-
-#myNumbermicro {
-  width: 60px;
-}
-
-#myNumbergalaxy {
-  width: 60px;
-}
-
-#myNumbervelvet {
-  width: 60px;
-}
-
-#myNumbertarda {
-  width: 60px;
-}
-#myNumberfrill {
-  width: 60px;
-}
-#myNumbergateshalbo {
-  width: 60px;
-}
-#myNumberchaircover {
-  width: 60px;
-}
-#myNumbertablecover {
-  width: 60px;
 }
 
 .footer-basic {
