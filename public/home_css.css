@@ -557,3 +557,32 @@ figure
   }
   
 /*Scroll effect css ends*/
+
+/* cart */
+.badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+  background-color: #c67605;
+}
+#cart_val {
+    font-size: 14px;
+    background: #fff;
+    color: rgb(225, 109, 138);
+    padding: 2px 6px;
+    vertical-align: top;
+    margin-left: -10px; 
+}
+.logo1{
+  margin-right: 2px;
+}
+.buy{
+  margin-right: 5%;
+}
+/* cart done */

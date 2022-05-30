@@ -1,3 +1,13 @@
+let cart_sum = 0
+let sum = 0
+
+function add_func(){
+	if (document.getElementById("cart_val").textContent != null)
+		sum = parseInt(cart_sum) + parseInt(document.getElementById("cart_val").textContent)
+	document.getElementById("cart_val").textContent = `${sum}`
+	cart_sum=0
+}
+
 const fabricRequiredAppendHtml = () => {
 	const config = {
 		grid_rows: 5
@@ -59,7 +69,7 @@ const fabricRequiredAppendHtml = () => {
 							</div>
 						</div>
 					</div>
-					<div class="button">add to cart</div>
+					<div class="button" onclick="add_func()">add to cart</div>
 				</buttons>
 			</div>
 		</div>`);
@@ -74,10 +84,14 @@ const fabricRequiredAppendHtml = () => {
 				console.error("Parameter inside textbox not of type INT. Defaulting to value 0");
 			}
 
-			if (mode == 0 && parseInt($(`#${id}_qty_decrement`).attr("data-numeric-min")) < value)
+			if (mode == 0 && parseInt($(`#${id}_qty_decrement`).attr("data-numeric-min")) < value){
 				value = value - 1;
-			else if (mode == 1 && parseInt($(`#${id}_qty_increment	`).attr("data-numeric-max")) > value)
+				cart_sum -= 1;
+			}
+			else if (mode == 1 && parseInt($(`#${id}_qty_increment	`).attr("data-numeric-max")) > value){
 				value = value + 1;
+				cart_sum += 1;
+			}
 			else {
 				value = value;
 			}

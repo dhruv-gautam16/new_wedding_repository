@@ -1,3 +1,12 @@
+let cart_sum = 0
+let sum = 0
+
+function add_func() {
+	if (document.getElementById("cart_val").textContent != null)
+		sum = parseInt(cart_sum) + parseInt(document.getElementById("cart_val").textContent)
+	document.getElementById("cart_val").textContent = `${sum}`
+	cart_sum = 0
+}
 const fabricRequiredAppendHtml = () => {
 	const config = {
 		grid_rows: 5
@@ -59,7 +68,7 @@ const fabricRequiredAppendHtml = () => {
 							</div>
 						</div>
 					</div>
-					<div class="button">add to cart</div>
+					<div class="button" onclick="add_func()">add to cart</div>
 				</buttons>
 			</div>
 		</div>`);
@@ -74,10 +83,16 @@ const fabricRequiredAppendHtml = () => {
 				console.error("Parameter inside textbox not of type INT. Defaulting to value 0");
 			}
 
-			if (mode == 0 && parseInt($(`#${id}_qty_decrement`).attr("data-numeric-min")) < value)
+			if (mode == 0 && parseInt($(`#${id}_qty_decrement`).attr("data-numeric-min")) < value) {
 				value = value - 1;
-			else if (mode == 1 && parseInt($(`#${id}_qty_increment	`).attr("data-numeric-max")) > value)
+				cart_sum -= 1;
+			}
+
+			else if (mode == 1 && parseInt($(`#${id}_qty_increment	`).attr("data-numeric-max")) > value) {
 				value = value + 1;
+				cart_sum += 1;
+			}
+
 			else {
 				value = value;
 			}
@@ -96,8 +111,8 @@ const fabricRequiredAppendHtml = () => {
 				console.error("Parameter inside textbox not of type INT. Defaulting to value 0");
 			}
 
-			if (mode == 0)(value == 0) ? value = parseInt($(`#${id}_color_decrement`).attr("data-max")) : value = value - 1;
-			else if (mode == 1)(value == parseInt($(`#${id}_color_decrement`).attr("data-max")) - 1) ? value = 0 : value = value + 1;
+			if (mode == 0) (value == 0) ? value = parseInt($(`#${id}_color_decrement`).attr("data-max")) : value = value - 1;
+			else if (mode == 1) (value == parseInt($(`#${id}_color_decrement`).attr("data-max")) - 1) ? value = 0 : value = value + 1;
 			else value = value;
 
 			$(`#${id}_color_numPad`).attr({
@@ -138,8 +153,7 @@ const fabricRequiredAppendHtml = () => {
 			$("body").append(`
 			  <div class="infoPanel_bg">
 				  <div class="infopanel">
-					  <div class="img" style="background-image: url('${
-				  bg == "" ? "./fab1.png" : bg
+					  <div class="img" style="background-image: url('${bg == "" ? "./fab1.png" : bg
 				}')">
 					  </div>
 					  <div class="info">
@@ -322,26 +336,26 @@ function nextPolaroid() {
 	TweenMax.fromTo(
 		$polaroidSlide.eq(followingSlide),
 		1, {
-			left: "100%",
-			opacity: 0,
-			scale: 0
-		}, {
-			left: "60%",
-			opacity: 0.5,
-			scale: 0.5
-		}
+		left: "100%",
+		opacity: 0,
+		scale: 0
+	}, {
+		left: "60%",
+		opacity: 0.5,
+		scale: 0.5
+	}
 	);
 	TweenMax.fromTo(
 		$polaroidSlide.eq(currentSlide),
 		1, {
-			left: "60%",
-			opacity: 0.5,
-			scale: 0.5
-		}, {
-			left: "0px",
-			opacity: 1,
-			scale: 1
-		}
+		left: "60%",
+		opacity: 0.5,
+		scale: 0.5
+	}, {
+		left: "0px",
+		opacity: 1,
+		scale: 1
+	}
 	);
 }
 
@@ -349,14 +363,14 @@ function previousPolaroid() {
 	TweenMax.fromTo(
 		$polaroidSlide.eq(currentSlide),
 		1, {
-			left: 0,
-			opacity: 1,
-			scale: 1
-		}, {
-			left: "60%",
-			opacity: 0.5,
-			scale: 0.5
-		}
+		left: 0,
+		opacity: 1,
+		scale: 1
+	}, {
+		left: "60%",
+		opacity: 0.5,
+		scale: 0.5
+	}
 	);
 	var prevSlide = currentSlide;
 	if (currentSlide > 0) {
@@ -401,25 +415,25 @@ function previousPolaroid() {
 	TweenMax.fromTo(
 		$polaroidSlide.eq(followingSlide),
 		1, {
-			left: "-100%",
-			opacity: 0,
-			scale: 0
-		}, {
-			left: "-60%",
-			opacity: 0.5,
-			scale: 0.5
-		}
+		left: "-100%",
+		opacity: 0,
+		scale: 0
+	}, {
+		left: "-60%",
+		opacity: 0.5,
+		scale: 0.5
+	}
 	);
 	TweenMax.fromTo(
 		$polaroidSlide.eq(currentSlide),
 		1, {
-			left: "-60%",
-			opacity: 0.5,
-			scale: 0.5
-		}, {
-			left: "0px",
-			opacity: 1,
-			scale: 1
-		}
+		left: "-60%",
+		opacity: 0.5,
+		scale: 0.5
+	}, {
+		left: "0px",
+		opacity: 1,
+		scale: 1
+	}
 	);
 }

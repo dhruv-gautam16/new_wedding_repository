@@ -1,3 +1,13 @@
+let cart_sum = 0
+let sum = 0
+
+function add_func() {
+	if (document.getElementById("cart_val").textContent != null)
+		sum = parseInt(cart_sum) + parseInt(document.getElementById("cart_val").textContent)
+	document.getElementById("cart_val").textContent = `${sum}`
+	cart_sum = 0
+}
+
 const fabricRequiredAppendHtml = () => {
 	const config = {
 		grid_rows: 5
@@ -59,7 +69,7 @@ const fabricRequiredAppendHtml = () => {
 							</div>
 						</div>
 					</div>
-					<div class="button">add to cart</div>
+					<div class="button" onclick="add_func()">add to cart</div>
 				</buttons>
 			</div>
 		</div>`);
@@ -74,10 +84,16 @@ const fabricRequiredAppendHtml = () => {
 				console.error("Parameter inside textbox not of type INT. Defaulting to value 0");
 			}
 
-			if (mode == 0 && parseInt($(`#${id}_qty_decrement`).attr("data-numeric-min")) < value)
+			if (mode == 0 && parseInt($(`#${id}_qty_decrement`).attr("data-numeric-min")) < value) {
 				value = value - 1;
-			else if (mode == 1 && parseInt($(`#${id}_qty_increment	`).attr("data-numeric-max")) > value)
+				cart_sum -= 1;
+			}
+
+			else if (mode == 1 && parseInt($(`#${id}_qty_increment	`).attr("data-numeric-max")) > value) {
 				value = value + 1;
+				cart_sum += 1;
+			}
+
 			else {
 				value = value;
 			}
@@ -96,8 +112,8 @@ const fabricRequiredAppendHtml = () => {
 				console.error("Parameter inside textbox not of type INT. Defaulting to value 0");
 			}
 
-			if (mode == 0)(value == 0) ? value = parseInt($(`#${id}_color_decrement`).attr("data-max")) : value = value - 1;
-			else if (mode == 1)(value == parseInt($(`#${id}_color_decrement`).attr("data-max")) - 1) ? value = 0 : value = value + 1;
+			if (mode == 0) (value == 0) ? value = parseInt($(`#${id}_color_decrement`).attr("data-max")) : value = value - 1;
+			else if (mode == 1) (value == parseInt($(`#${id}_color_decrement`).attr("data-max")) - 1) ? value = 0 : value = value + 1;
 			else value = value;
 
 			$(`#${id}_color_numPad`).attr({
@@ -138,8 +154,7 @@ const fabricRequiredAppendHtml = () => {
 			$("body").append(`
 			  <div class="infoPanel_bg">
 				  <div class="infopanel">
-					  <div class="img" style="background-image: url('${
-				  bg == "" ? "./fab1.png" : bg
+					  <div class="img" style="background-image: url('${bg == "" ? "./fab1.png" : bg
 				}')">
 					  </div>
 					  <div class="info">
@@ -251,116 +266,116 @@ jQuery(document).ready(function ($) {
 //     })
 // });
 
-$(function(){
+$(function () {
 	polaroidSlides();
-  });
-  //var currentSlide;
-  function polaroidSlides() {
+});
+//var currentSlide;
+function polaroidSlides() {
 	$polaroidSlide = $(".polaroid");
 	currentSlide = 0;
 	polaroidSlidesActive = true;
-	TweenMax.set($polaroidSlide[1], {left:"60%", opacity:0.5, scale:0.5});
-	TweenMax.set($polaroidSlide[2], {left:"-60%", opacity:0.5, scale:0.5});
-	TweenMax.set($polaroidSlide[3], {opacity:0, scale:0});
+	TweenMax.set($polaroidSlide[1], { left: "60%", opacity: 0.5, scale: 0.5 });
+	TweenMax.set($polaroidSlide[2], { left: "-60%", opacity: 0.5, scale: 0.5 });
+	TweenMax.set($polaroidSlide[3], { opacity: 0, scale: 0 });
 	//TweenMax.set($polaroidSlide[4], {opacity:0, scale:0});
-  };
-  
-  function nextPolaroid() {
-	  TweenMax.to($polaroidSlide.eq(currentSlide), 1, {left:"-60%", opacity:0.5, scale:0.5});
-	  var prevSlide = currentSlide;
-	  if (currentSlide < $polaroidSlide.length - 1) {
+};
+
+function nextPolaroid() {
+	TweenMax.to($polaroidSlide.eq(currentSlide), 1, { left: "-60%", opacity: 0.5, scale: 0.5 });
+	var prevSlide = currentSlide;
+	if (currentSlide < $polaroidSlide.length - 1) {
 		currentSlide++;
-	  }
-	  else {
-		currentSlide = 0;      
-	  };
-	  if (currentSlide < $polaroidSlide.length - 1) {
-		var followingSlide = currentSlide+1;
-	  }
-	  else {
+	}
+	else {
+		currentSlide = 0;
+	};
+	if (currentSlide < $polaroidSlide.length - 1) {
+		var followingSlide = currentSlide + 1;
+	}
+	else {
 		followingSlide = 0;
-	  }
-	
-	
-	 if ($polaroidSlide.length >= 4) {
-	  if (currentSlide == 0) {
-		var left = $polaroidSlide.length - 1;
-	  }
-	  else {
-		left = currentSlide - 1;
-	  }
-	  if (currentSlide == $polaroidSlide.length - 1) {
-		var right = 0;
-	  }
-	  else {
-		right = currentSlide + 1;
-	  }
-	  var range = [];
-	  for (i = 0; i < $polaroidSlide.length; i++) {
-		range.push(i);
-	  }
-	  
-	  for (i = 0; i < range.length; i++) {
-		if ((range[i] != left) && (range[i] != right) && (range[i] != currentSlide)) {
-		  TweenMax.set($polaroidSlide[i], {opacity:0, scale:0});
-		}
-  
-	  }
 	}
-	  TweenMax.fromTo($polaroidSlide.eq(followingSlide),1, {left:"100%", opacity:0,scale:0}, {left:"60%", opacity:0.5,scale:0.5});
-	  TweenMax.fromTo($polaroidSlide.eq(currentSlide), 1, {left: "60%", opacity:0.5, scale:0.5}, {left:"0px", opacity:1, scale:1});
-	}
-	
-	
-	
-	
-	
-	
-  function previousPolaroid() {
-	  TweenMax.fromTo($polaroidSlide.eq(currentSlide), 1, {left:0, opacity:1, scale:1},{left:"60%", opacity:0.5, scale:0.5});
-	  var prevSlide = currentSlide;
-	  if (currentSlide > 0) {
-		currentSlide--;
-	  }
-	  else {
-		currentSlide = $polaroidSlide.length - 1;
-	  };
-	  if (currentSlide > 0) {
-		var followingSlide = currentSlide - 1;
-	  }
-	  else {
-		followingSlide = $polaroidSlide.length - 1;
-	  }
-	
-	
+
+
 	if ($polaroidSlide.length >= 4) {
-	  if (currentSlide == 0) {
-		var left = $polaroidSlide.length - 1;
-	  }
-	  else {
-		left = currentSlide - 1;
-	  }
-	  if (currentSlide == $polaroidSlide.length - 1) {
-		var right = 0;
-	  }
-	  else {
-		right = currentSlide + 1;
-	  }
-	  var range = [];
-	  for (i = 0; i < $polaroidSlide.length; i++) {
-		range.push(i);
-	  }
-  
-	  for (i = 0; i < range.length; i++) {
-		if ((range[i] != left) && (range[i] != right) && (range[i] != currentSlide)) {
-		  TweenMax.set($polaroidSlide[i], {opacity:0, scale:0});
+		if (currentSlide == 0) {
+			var left = $polaroidSlide.length - 1;
 		}
-  
-	  }
+		else {
+			left = currentSlide - 1;
+		}
+		if (currentSlide == $polaroidSlide.length - 1) {
+			var right = 0;
+		}
+		else {
+			right = currentSlide + 1;
+		}
+		var range = [];
+		for (i = 0; i < $polaroidSlide.length; i++) {
+			range.push(i);
+		}
+
+		for (i = 0; i < range.length; i++) {
+			if ((range[i] != left) && (range[i] != right) && (range[i] != currentSlide)) {
+				TweenMax.set($polaroidSlide[i], { opacity: 0, scale: 0 });
+			}
+
+		}
 	}
-	
+	TweenMax.fromTo($polaroidSlide.eq(followingSlide), 1, { left: "100%", opacity: 0, scale: 0 }, { left: "60%", opacity: 0.5, scale: 0.5 });
+	TweenMax.fromTo($polaroidSlide.eq(currentSlide), 1, { left: "60%", opacity: 0.5, scale: 0.5 }, { left: "0px", opacity: 1, scale: 1 });
+}
+
+
+
+
+
+
+function previousPolaroid() {
+	TweenMax.fromTo($polaroidSlide.eq(currentSlide), 1, { left: 0, opacity: 1, scale: 1 }, { left: "60%", opacity: 0.5, scale: 0.5 });
+	var prevSlide = currentSlide;
+	if (currentSlide > 0) {
+		currentSlide--;
+	}
+	else {
+		currentSlide = $polaroidSlide.length - 1;
+	};
+	if (currentSlide > 0) {
+		var followingSlide = currentSlide - 1;
+	}
+	else {
+		followingSlide = $polaroidSlide.length - 1;
+	}
+
+
+	if ($polaroidSlide.length >= 4) {
+		if (currentSlide == 0) {
+			var left = $polaroidSlide.length - 1;
+		}
+		else {
+			left = currentSlide - 1;
+		}
+		if (currentSlide == $polaroidSlide.length - 1) {
+			var right = 0;
+		}
+		else {
+			right = currentSlide + 1;
+		}
+		var range = [];
+		for (i = 0; i < $polaroidSlide.length; i++) {
+			range.push(i);
+		}
+
+		for (i = 0; i < range.length; i++) {
+			if ((range[i] != left) && (range[i] != right) && (range[i] != currentSlide)) {
+				TweenMax.set($polaroidSlide[i], { opacity: 0, scale: 0 });
+			}
+
+		}
+	}
+
 	console.log("Slide to the left: " + followingSlide);
-	
-	TweenMax.fromTo($polaroidSlide.eq(followingSlide),1, {left:"-100%", opacity:0,scale:0}, {left:"-60%", opacity:0.5,scale:0.5});
-	  TweenMax.fromTo($polaroidSlide.eq(currentSlide), 1, {left: "-60%", opacity:0.5, scale:0.5}, {left:"0px", opacity:1, scale:1});
-	}
+
+	TweenMax.fromTo($polaroidSlide.eq(followingSlide), 1, { left: "-100%", opacity: 0, scale: 0 }, { left: "-60%", opacity: 0.5, scale: 0.5 });
+	TweenMax.fromTo($polaroidSlide.eq(currentSlide), 1, { left: "-60%", opacity: 0.5, scale: 0.5 }, { left: "0px", opacity: 1, scale: 1 });
+}
