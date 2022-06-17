@@ -1,11 +1,10 @@
-let cart_sum = 0
-let sum = 0
-
-function add_func() {
-	if (document.getElementById("cart_val").textContent != null)
-		sum = parseInt(cart_sum) + parseInt(document.getElementById("cart_val").textContent)
-	document.getElementById("cart_val").textContent = `${sum}`
-	cart_sum = 0
+const updateCartNumber = () => {
+	try {
+		let x = JSON.parse(window.localStorage.getItem("cart-items")).length;
+		$("#cart_val").html(x)
+	} catch {
+		$("#cart_val").html(0)
+	}
 }
 
 const fabricRequiredAppendHtml = () => {
@@ -37,7 +36,7 @@ const fabricRequiredAppendHtml = () => {
 			let id_inner = [makeid(), makeid()];
 			let elem = '';
 			for (let j in jsonData[i].param.colors) {
-				elem = elem + `<option value="volvo">${jsonData[i].param.colors[j]}</option>`
+				elem = elem + `<option value="${jsonData[i].param.colors[j]}">${jsonData[i].param.colors[j]}</option>`
 			}
 			$(`#${id}`).append(`
 		<div class="card" data-desc="${jsonData[i].desc}">
@@ -69,11 +68,67 @@ const fabricRequiredAppendHtml = () => {
 							</div>
 						</div>
 					</div>
-					<div class="button" onclick="add_func()">add to cart</div>
+					<div class="button cart_adder" data-rel="${i}" data-name="${jsonData[i].name}" data-id="${id_inner[0]}" data-id-color="${id_inner[1]}">add to cart</div>
 				</buttons>
 			</div>
 		</div>`);
 		}
+
+		$(".cart_adder").on("click", (e) => {
+			let item_list;
+			if (parseInt($(`#${$(e.currentTarget).attr("data-id")}_qty_numPad`).attr("value")) == 0) return
+			try {
+				item_list = window.localStorage.getItem("cart-items")
+				item_list = JSON.parse(item_list)
+			} catch {
+				console.warn("[FAILSAFE] JSON Parse Failure. Aborting");
+			}
+			if (item_list == null || item_list.length == 0) {
+				item_list = []
+				console.info("[FALLBACK] Item Cart Empty. Creating new");
+			} else {
+				console.info("[ITEM LIST] Item List bag retrived");
+			}
+			let trigger = false
+			for (let i = 0; i < item_list.length; i++) {
+				if (item_list[i].item == $(e.currentTarget).attr("data-name") && item_list[i].id == $(e.currentTarget).attr("data-rel") && document.querySelector(`#${$(e.currentTarget).attr("data-id-color")}_combobox`).value == item_list[i].color) {
+					swal({
+							title: "Are you sure?",
+							text: `${item_list[i].count} number of ${item_list[i].item} of the same color was already found in your cart. Would you like to add ${$(`#${$(e.currentTarget).attr("data-id")}_qty_numPad`).attr("value")} more?`,
+							icon: "warning",
+							buttons: true,
+							dangerMode: true,
+						}).then((value) => {
+							if (value) {
+								item_list = JSON.parse(window.localStorage.getItem("cart-items"))
+								item_list[i].count = parseInt(item_list[i].count) + parseInt($(`#${$(e.currentTarget).attr("data-id")}_qty_numPad`).attr("value"));
+								window.localStorage.setItem("cart-items", JSON.stringify(item_list))
+								updateCartNumber()
+								$(`#${$(e.currentTarget).attr("data-id")}_qty_numPad`).attr({
+									value: 0
+								})
+							} else {
+								return
+							}
+						});
+					trigger = true;
+				}
+			}
+			if (!trigger) {
+				item_list.push({
+					"item": $(e.currentTarget).attr("data-name"),
+					"id": $(e.currentTarget).attr("data-rel"),
+					"color": document.querySelector(`#${$(e.currentTarget).attr("data-id-color")}_combobox`).value,
+					"count": $(`#${$(e.currentTarget).attr("data-id")}_qty_numPad`).attr("value")
+				})
+				$(`#${$(e.currentTarget).attr("data-id")}_qty_numPad`).attr({
+					value: 0
+				})
+			}
+			item_list = JSON.stringify(item_list)
+			window.localStorage.setItem("cart-items", item_list)
+			updateCartNumber()
+		})
 
 		const valueChange = (mode, id) => {
 			let value = 0;
@@ -86,15 +141,9 @@ const fabricRequiredAppendHtml = () => {
 
 			if (mode == 0 && parseInt($(`#${id}_qty_decrement`).attr("data-numeric-min")) < value) {
 				value = value - 1;
-				cart_sum -= 1;
-			}
-
-			else if (mode == 1 && parseInt($(`#${id}_qty_increment	`).attr("data-numeric-max")) > value) {
+			} else if (mode == 1 && parseInt($(`#${id}_qty_increment	`).attr("data-numeric-max")) > value) {
 				value = value + 1;
-				cart_sum += 1;
-			}
-
-			else {
+			} else {
 				value = value;
 			}
 			$(`#${id}_qty_numPad`).attr({
@@ -112,8 +161,8 @@ const fabricRequiredAppendHtml = () => {
 				console.error("Parameter inside textbox not of type INT. Defaulting to value 0");
 			}
 
-			if (mode == 0) (value == 0) ? value = parseInt($(`#${id}_color_decrement`).attr("data-max")) : value = value - 1;
-			else if (mode == 1) (value == parseInt($(`#${id}_color_decrement`).attr("data-max")) - 1) ? value = 0 : value = value + 1;
+			if (mode == 0)(value == 0) ? value = parseInt($(`#${id}_color_decrement`).attr("data-max")) : value = value - 1;
+			else if (mode == 1)(value == parseInt($(`#${id}_color_decrement`).attr("data-max")) - 1) ? value = 0 : value = value + 1;
 			else value = value;
 
 			$(`#${id}_color_numPad`).attr({
@@ -184,8 +233,6 @@ const fabricRequiredAppendHtml = () => {
 };
 
 fabricRequiredAppendHtml();
-
-
 
 function test() {
 	var tabsNewAnim = $("#navbarSupportedContent");
@@ -379,3 +426,7 @@ function previousPolaroid() {
 	TweenMax.fromTo($polaroidSlide.eq(followingSlide), 1, { left: "-100%", opacity: 0, scale: 0 }, { left: "-60%", opacity: 0.5, scale: 0.5 });
 	TweenMax.fromTo($polaroidSlide.eq(currentSlide), 1, { left: "-60%", opacity: 0.5, scale: 0.5 }, { left: "0px", opacity: 1, scale: 1 });
 }
+
+setTimeout(() => {
+	updateCartNumber()
+}, 500)
